@@ -3,11 +3,13 @@ export class Paginator {
     private _totalPages: number;
     private _padding: number;
     private _pages: number[];
+    private _activePageChangeCallback: (activePage: number) => void;
 
-    constructor(activePage: number, totalPages: number, padding: 2) {
+    constructor(activePage: number, totalPages: number, activePageChangeCallback: (activePage: number) => void, padding: number = 2) {
         this._activePage = activePage;
         this._totalPages = totalPages;
         this._padding = padding;
+        this._activePageChangeCallback = activePageChangeCallback;
 
         this._pages = this.buildPages();
     }
@@ -20,6 +22,7 @@ export class Paginator {
         this._activePage = newPage;
 
         this.pages = this.buildPages();
+        this._activePageChangeCallback(this.activePage);
     }
 
     get totalPages() {

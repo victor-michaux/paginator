@@ -1,6 +1,6 @@
 {
   "name": "@victor-michaux/pagination",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "dist/paginator.umd.js",
   "typings": "dist/types/main.d.ts",
   "repository": "git@github.com:victor-michaux/paginator.git",
